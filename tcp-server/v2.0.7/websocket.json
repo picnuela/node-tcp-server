@@ -1,0 +1,21 @@
+{
+  "local": {
+    "host": "localhost",
+    "port": 8002,
+    "keepAlive": 30,
+    "ipName": "dhp.webserver",
+    "scounter": 1
+  },
+  "remote": {
+    "host": "iot.home.com",
+    "port": 1887,
+    "keepAlive": 30,
+    "device_id": "dhp.websocket.server.102",
+    "device_type": "websocket.server",
+    "username": "infomedia",
+    "password": "****",
+    "topics": [
+      "infomedia/websocket"
+    ]
+  }
+}

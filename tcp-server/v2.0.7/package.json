@@ -1,0 +1,16 @@
+{
+  "name": "node-tcp-server-207",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "henry",
+  "contributors": [],
+  "dependencies": {
+    "ws": "^8.2.3"
+  }
+}
