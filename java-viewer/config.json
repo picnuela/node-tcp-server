@@ -1,0 +1,24 @@
+{
+  "config-file":"/usr/projects/java/jars-programs/swing-tcp-viewer/config.json",
+  "host-history":{
+    "list":[
+      "iot.home.com",
+      "127.0.0.1",
+    ],
+    "selected":1
+  },
+  "port-history":{
+    "list":[
+      "1887",
+      "1888",
+      "1889"
+    ],
+    "selected":0
+  },
+  "send-history":{
+    "list":[
+      "{\"id\":\"henry.window.101\" ,\"action\":\"connect\",\"keepAlive\":10,,\"topic\":\"./monitor\"}"
+    ],
+    "selected":0
+  }
+}
