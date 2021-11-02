@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>WebSocket Test-1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body onload="pageInit()">
+    <h1>Chat</h1>
+    <div>
+      <input id="message" placeholder="Message">
+      <button id="send" disabled>Send</button>
+    </div>
+    <div id="messages">
+    </div>
+    
+    <script src="scripts/fn-utilities.js"></script>
+    <script src="scripts/web-socket.js"></script>
+    <script>
+    var wsSocket = new WSocket({
+        url: "ws://iot.home.com/",
+        clientId: 'web.page.0001',
+        keepAlive: 10,
+        topics:[
+          "infomedia/websockets/page-test-01"
+        ],
+        
+        onopen: function () {
+          document.querySelector('#send').disabled = false;
+          document.querySelector('#send').addEventListener('click', function () {
+            let mssg = document.querySelector('#message').value;
+            mssg += "\r\n";
+            wsSocket.send({
+              'action': 'publish',
+              'topic': 'infomedia/websocket/page0',
+              'data': mssg
+            });
+          });
+          document.querySelector('#messages').innerHTML += `<div>ip: ${wsSocket.ip}</div>`; 
+        },
+        
+        onclose: function () {
+          document.querySelector('#send').disabled = true;
+          document.querySelector('#message').value = "";
+          document.querySelector('#messages').innerHTML= "<div>WebSocket Closed</div>";
+        },
+        
+        onmessage: function (data) {
+          data = Fn.asString(data);
+          document.querySelector('#message').value = "";
+          document.querySelector('#messages').innerHTML += `<div>rx:${data}</div>`; 
+        },
+        
+        onerror: function (err) {
+          document.querySelector('#message').value = "";
+          document.querySelector('#messages').innerHTML += `<div>error: ${err}</div>`; 
+        }
+    });
+    function pageInit() {
+      wsSocket.open();
+    }
+    </script>
+  </body>
+</html>
