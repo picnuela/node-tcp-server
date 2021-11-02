@@ -105,4 +105,22 @@ En la carpeta html se ha dejado de una página de prueba que podra usarla para c
 Debe crear MUCHAS conexiones tanto en conexión local como en alguna proxima y observar la apertura y cierre en el visor java.
 Cambiar el argumento topics en la página HTML y observar que el mensaje se propage solo a las que tengan el mismo topic.
 
+El el archivo html de la carpeta html
+
+``` 
+var wsSocket = new WSocket({
+        url: "ws://iot.home.com/",
+        clientId: 'web.page.0001',
+        keepAlive: 10,
+        topics:[
+          "infomedia/websockets/page-test-01"
+        ],
+```
+son las configuraciones a cambiar
+
+        
+
+
+
+
 <br><br>
