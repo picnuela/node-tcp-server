@@ -103,5 +103,6 @@ java -Dswing.aatext="true" -Dawt.useSystemAAFontSettings="gasp" -jar "$INIT_PATH
 En la carpeta html se ha dejado de una página de prueba que podra usarla para crear conexiones.<br>El código viene documentado (dentro de el) así que si usa un buen IDE podra tener acceso rapido a esta.
 
 Debe crear MUCHAS conexiones tanto en conexión local como en alguna proxima y observar la apertura y cierre en el visor java.
+Cambiar el argumento topics en la página HTML y observar que el mensaje se propage solo a las que tengan el mismo topic.
 
 <br><br>
