@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Web Screen Main Page -->
+<html>
+  <head>
+    <title>Web Screen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-png" href="favicon.png" />
+
+  </head>
+  <body onload="pageInit(settings)">
+    <div id="div_main">
+      <iframe id="div_iframe" 
+              src="http://iot-wintrok.com/cws" 
+              style="border:0px;width:100%;height:350px;">
+        
+      </iframe>
+    </div>
+    <div id="div_floor">
+      <div id="div_cnx_status" style="float:right;"></div>
+      <div id="div_cnx_address" style="float:right;" ></div>
+      <div style="clear:both;"></div>
+    </div>
+    <script src="resources/scripts/fn-utilities.js"></script>
+    <script src="resources/scripts/web-socket.js"></script>
+    <script src="resources/scripts/screen-page.js"></script>
+    <script>
+      var settings = {
+        url: 'ws://iot.home.com/',
+        clientId: 'web.page',
+        password: '****',
+        user: 'infomedia',
+        type: 'web.page',
+        topics: [ 
+          'infomedia/websocket/pages/1001' 
+        ],
+        keepAlive: 60
+      };
+    </script>
+  </body>
+</html>
